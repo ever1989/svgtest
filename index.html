@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo svg</title>
+</head>
+<body>
+	<object data="dibujo.svg" type="image/svg+xml" id="alphasvg" width="100%" height="100%"></object>
+	<script
+  	src="https://code.jquery.com/jquery-3.6.0.js"
+  	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  	crossorigin="anonymous"></script>
+  	<script>
+  		$(window).ready(function () {
+
+  			alert("hi");
+		    //alert("Document loaded, including graphics and embedded documents (like SVG)");
+		    var a = document.getElementById("alphasvg");
+
+		    //get the inner DOM of alpha.svg
+		    var svgDoc = a.contentDocument;
+
+		    //get the inner element by id
+		    // var delta = svgDoc.getElementById("path76");
+		    var delta = $(svgDoc).find("#path142");
+
+		    delta.on("click", function(e){
+		    	alert("hola");
+		    });
+		    // delta.addEventListener("click", function(){ alert('hello world!')}, false);
+		});
+  	</script>	
+</body>
+</html>
